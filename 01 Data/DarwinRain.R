@@ -1,0 +1,2 @@
+require(jsonlite)
+Darwin_rain <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?query="select * from darwinrain"'),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_jz7674', PASS='orcl_jz7674', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE)))
