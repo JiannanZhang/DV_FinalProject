@@ -1,7 +1,7 @@
 ---
 title: "Final Project: Australia Climate and Rainfall"
 author: "Jeffrey and Jackie"
-date: "Monday, May 04, 2015"
+date: "Wednesday, May 13th, 2015"
 output: html_document
 ---
 
@@ -22,6 +22,7 @@ require("jsonlite")
 require(dplyr)
 require(tidyr)
 require(reshape2)
+require(knitr)
 ```
 
 Data
@@ -30,7 +31,7 @@ source("../01 Data/AdelaideRain.R", echo = TRUE)
 source("../01 Data/BrisbaneRain.R", echo = TRUE)
 source("../01 Data/CairnsRain.R", echo = TRUE)
 source("../01 Data/CanberraRain.R", echo = TRUE)
-source("../01 Data/DawrinRain.R", echo = TRUE)
+source("../01 Data/DarwinRain.R", echo = TRUE)
 source("../01 Data/HobartRain.R", echo = TRUE)
 source("../01 Data/MelbourneRain.R", echo = TRUE)
 source("../01 Data/PerthRain.R", echo = TRUE)

@@ -64,6 +64,47 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <li>Data Source and Data</li>
 </ol>
 <p>The Bureau of Meteorology (BOM) is Australia’s national weather, climate, and water agency. They provide infofrmation to all states with in Australia.</p>
+<p>Data</p>
+<pre class="r"><code>source(&quot;../01 Data/AdelaideRain.R&quot;, echo = TRUE)</code></pre>
+<pre><code>## 
+## &gt; adelaide_rain &lt;- data.frame(fromJSON(getURL(URLencode(&quot;129.152.144.84:5001/rest/native/?query=\&quot;select * from Adelaiderain\&quot;&quot;), 
+## +     httpheader =  .... [TRUNCATED]</code></pre>
+<pre class="r"><code>source(&quot;../01 Data/BrisbaneRain.R&quot;, echo = TRUE)</code></pre>
+<pre><code>## 
+## &gt; brisbane_rain &lt;- data.frame(fromJSON(getURL(URLencode(&quot;129.152.144.84:5001/rest/native/?query=\&quot;select * from Brisbanerain\&quot;&quot;), 
+## +     httpheader =  .... [TRUNCATED]</code></pre>
+<pre class="r"><code>source(&quot;../01 Data/CairnsRain.R&quot;, echo = TRUE)</code></pre>
+<pre><code>## 
+## &gt; cairns_rain &lt;- data.frame(fromJSON(getURL(URLencode(&quot;129.152.144.84:5001/rest/native/?query=\&quot;select * from cairnsrain\&quot;&quot;), 
+## +     httpheader = c(DB .... [TRUNCATED]</code></pre>
+<pre class="r"><code>source(&quot;../01 Data/CanberraRain.R&quot;, echo = TRUE)</code></pre>
+<pre><code>## 
+## &gt; canberra_rain &lt;- data.frame(fromJSON(getURL(URLencode(&quot;129.152.144.84:5001/rest/native/?query=\&quot;select * from canberrarain\&quot;&quot;), 
+## +     httpheader =  .... [TRUNCATED]</code></pre>
+<pre class="r"><code>source(&quot;../01 Data/DarwinRain.R&quot;, echo = TRUE)</code></pre>
+<pre><code>## 
+## &gt; Darwin_rain &lt;- data.frame(fromJSON(getURL(URLencode(&quot;129.152.144.84:5001/rest/native/?query=\&quot;select * from darwinrain\&quot;&quot;), 
+## +     httpheader = c(DB .... [TRUNCATED]</code></pre>
+<pre class="r"><code>source(&quot;../01 Data/HobartRain.R&quot;, echo = TRUE)</code></pre>
+<pre><code>## 
+## &gt; hobart_rain &lt;- data.frame(fromJSON(getURL(URLencode(&quot;129.152.144.84:5001/rest/native/?query=\&quot;select * from hobartrain\&quot;&quot;), 
+## +     httpheader = c(DB .... [TRUNCATED]</code></pre>
+<pre class="r"><code>source(&quot;../01 Data/MelbourneRain.R&quot;, echo = TRUE)</code></pre>
+<pre><code>## 
+## &gt; melbourne_rain &lt;- data.frame(fromJSON(getURL(URLencode(&quot;129.152.144.84:5001/rest/native/?query=\&quot;select * from Melbournerain\&quot;&quot;), 
+## +     httpheader  .... [TRUNCATED]</code></pre>
+<pre class="r"><code>source(&quot;../01 Data/PerthRain.R&quot;, echo = TRUE)</code></pre>
+<pre><code>## 
+## &gt; perth_rain &lt;- data.frame(fromJSON(getURL(URLencode(&quot;129.152.144.84:5001/rest/native/?query=\&quot;select * from perthrain\&quot;&quot;), 
+## +     httpheader = c(DB = .... [TRUNCATED]</code></pre>
+<pre class="r"><code>source(&quot;../01 Data/SydneyRain.R&quot;, echo = TRUE)</code></pre>
+<pre><code>## 
+## &gt; sydney_rain &lt;- data.frame(fromJSON(getURL(URLencode(&quot;129.152.144.84:5001/rest/native/?query=\&quot;select * from Sydneyrain\&quot;&quot;), 
+## +     httpheader = c(DB .... [TRUNCATED]</code></pre>
+<pre class="r"><code>source(&quot;../01 Data/TownsvilleRain.R&quot;, echo = TRUE)</code></pre>
+<pre><code>## 
+## &gt; townsville_rain &lt;- data.frame(fromJSON(getURL(URLencode(&quot;129.152.144.84:5001/rest/native/?query=\&quot;select * from townsvillerain\&quot;&quot;), 
+## +     httpheade .... [TRUNCATED]</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Cleaning and Transforming Data</li>
 </ol>
