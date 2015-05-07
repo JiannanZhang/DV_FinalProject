@@ -1,4 +1,5 @@
 require(dplyr)
+require(ggplot2)
 
 tbl_df(sydneyr)
 tbl_df(adelaider)
@@ -17,8 +18,6 @@ tbl_df(canberrar)
  # join <- inner_join(table_name[1], table_name[2], by="YEAR")
   #join_table 
 #}
-join1 <- inner_join(sydneyr, adelaider, by = "YEAR") 
-join2 <- inner_join(perthr, darwinr, by = "YEAR")
-join4 <- inner_join(townsviller, hobartr, by = "YEAR")
-join6 <- inner_join(melbourner, brisbaner, by = "YEAR")
-join8 <- inner_join(canberrar, cairnsr, by = "YEAR")
+join1 <- inner_join(adelaider, brisbaner, by = "YEAR")  %>% inner_join(cairnsr, by = "YEAR") %>% inner_join(canberrar, by = "YEAR") %>% inner_join(darwinr, by = "YEAR") %>% inner_join(hobartr, by = "YEAR") %>% inner_join(melbourner, by = "YEAR") %>% inner_join(perthr, by = "YEAR") %>% inner_join(sydneyr, by = "YEAR") %>% inner_join(townsviller, by = "YEAR")
+names(join1) <- c("YEAR", "Adelaide_Total", "Adelaride_AVG", "Brisbane_Total", "Brisbane_AVG", "Cairns_Total", "Cairns_AVG", "Canberra_Total", "Canberra_AVG", "Darwin_Total", "Darwin_AVG", "Hobart_Total", "Hobart_AVG", "Melbourne_Total", "Melbourne_AVG", "Perth_Total", "Perth_AVG", "Sydney_Total", "Sydney_AVG", "Townsville_Total", "Townsville_AVG" )
+join1 %>% ggplot()
