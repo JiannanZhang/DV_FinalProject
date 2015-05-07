@@ -3,6 +3,7 @@ require(tidyr)
 require(ggplot)
  
 tbl_df(sydney_rain)
+
 sydney_rain %>% group_by(YEAR) %>% summarise(total = sum(RAINFALL_AMOUNT_MM)) %>% tbl_df
 sydney_rain %>% group_by(YEAR, MONTH) %>% summarise(total = sum(RAINFALL_AMOUNT_MM)) %>% tbl_df
 sydney_rain %>% group_by(YEAR, MONTH) %>% filter(YEAR >= 1990) %>% summarise(total = sum(RAINFALL_AMOUNT_MM)) %>% tbl_df
