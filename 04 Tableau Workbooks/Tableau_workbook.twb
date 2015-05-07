@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8' ?>
 
-<workbook source-platform='mac' version='8.3' xmlns:user='http://www.tableausoftware.com/xml/user'>
+<workbook source-platform='win' version='8.3' xmlns:user='http://www.tableausoftware.com/xml/user'>
   <!-- build 8300.15.0219.2230                                -->
   <preferences>
   </preferences>
@@ -143,7 +143,7 @@
       </semantic-values>
     </datasource>
     <datasource caption='Sydney_temp' inline='true' name='textscan.42128.841174166700' version='8.3'>
-      <connection class='textscan' directory='/Users/Jeffrey/Desktop/CS329DataVisulizaion/DV_FinalProject/01 Data' filename='Sydney_temp.csv'>
+      <connection class='textscan' directory='C:/Users/Jaclyn Nguyen/Documents/DataVisualization/DV_FinalProject/04 Tableau Workbooks/Users/Jeffrey/Desktop/CS329DataVisulizaion/DV_FinalProject/01 Data' filename='Sydney_temp.csv'>
         <relation name='Sydney_temp#csv' table='[Sydney_temp#csv]' type='table'>
           <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
             <column datatype='date' name='date' ordinal='0' />
@@ -352,6 +352,8 @@
           <field>[oracle.42126.751980173600].[none:TEMP_DATE:ok]</field>
         </color-one-way>
       </highlight>
+      <viewpoint>
+      </viewpoint>
     </window>
     <window auto-hidden='0' class='worksheet' maximized='1' name='Sheet 2'>
       <cards>

@@ -13,7 +13,7 @@ All project materials can be downloaded or pulled from our [GitHub](https://gith
 
 The Bureau of Meteorology (BOM) is Australia's national weather, climate, and water agency. They provide infofrmation to all states with in Australia.
 
-```{r, echo = FALSE}
+```{r, include = FALSE}
 library(RCurl)
 library (ggplot2)
 library(extrafont)
@@ -23,3 +23,37 @@ require(dplyr)
 require(tidyr)
 require(reshape2)
 ```
+
+Data
+```{r}
+source("../01 Data/AdelaideRain.R", echo = TRUE)
+source("../01 Data/BrisbaneRain.R", echo = TRUE)
+source("../01 Data/CairnsRain.R", echo = TRUE)
+source("../01 Data/CanberraRain.R", echo = TRUE)
+source("../01 Data/DawrinRain.R", echo = TRUE)
+source("../01 Data/HobartRain.R", echo = TRUE)
+source("../01 Data/MelbourneRain.R", echo = TRUE)
+source("../01 Data/PerthRain.R", echo = TRUE)
+source("../01 Data/SydneyRain.R", echo = TRUE)
+source("../01 Data/TownsvilleRain.R", echo = TRUE)
+```
+
+2. Cleaning and Transforming Data
+a. Removing NA from datasets
+SQL in ORCLE: 
+
+UPDATE Table Name
+SET Column Name = '0'
+WHERE Column Name = 'NA';
+
+b. Reformat.R was used to clean data from any illegal characters in SQL and change the column names to the correct format
+Before 
+
+![](./Sydneyrainbefore.png)
+
+After
+
+![](./Sydneyrainafter.png)
+
+
+

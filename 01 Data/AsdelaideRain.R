@@ -1,2 +1,1 @@
-require(jsonlite)
-adelaide_rain <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?query="select MONTH || \\\"/"\\\ || DAY || \\\"/"\\\ || YEAR, RAINFALL_AMOUNT_MM from Adelaiderain"'),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_jz7674', PASS='orcl_jz7674', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE)))
+adelaide_rain <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?query="select * from Adelaiderain"'),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_jz7674', PASS='orcl_jz7674', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE)))
