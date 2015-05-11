@@ -28,6 +28,10 @@ join2 <- full_join(adelaider2, brisbaner2, by = "MONTH")  %>% full_join(cairnsr2
 
 names(join2) <- c("MONTH", "Adelaide_AVG", "Brisbane_AVG", "Cairns_AVG", "Canberra_AVG", "Darwin_AVG",  "Hobart_AVG", "Melbourne_AVG",  "Perth_AVG", "Sydney_AVG",  "Townsville_AVG")
 
-join3 <- join2 %>%  melt(id.vars = "MONTH", measure.vars = c("Adelaide_AVG", "Brisbane_AVG", "Cairns_AVG", "Canberra_AVG", "Darwin_AVG", "Hobart_AVG",  "Melbourne_AVG",  "Perth_AVG",  "Sydney_AVG", "Townsville_AVG"))
+join3 <- join2 %>%  melt(id.vars = "MONTH", measure.vars = c("Adelaide_AVG", "Brisbane_AVG", "Cairns_AVG", "Canberra_AVG", "Darwin_AVG", "Hobart_AVG",  "Melbourne_AVG",  "Perth_AVG",  "Sydney_AVG", "Townsville_AVG")) %>% group_by(MONTH) %>% summarise(sum=sum(value)) 
+join3$MONTH <- c('January', 'February', 'March','April', 'May', 'June', 'July','August', 'September', 'October', 'November', 'December')
 
-qplot(join3$value,geom="histogram", binwidth = .5)
+barplot(join3$sum,names.arg=join3$MONTH,legend.text = NULL, beside = FALSE,
+        main = 'Sum of Average Raingall per\nMonth for all Ten Cities', sub = NULL, las=2, xlab = '', ylab = 'Sum of Average rainfall (mm)', col = 'blue') 
+
+#qplot(join3$value,geom="histogram", binwidth = .5)
