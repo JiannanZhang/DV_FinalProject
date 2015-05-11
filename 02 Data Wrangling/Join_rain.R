@@ -32,6 +32,6 @@ join3 <- join2 %>%  melt(id.vars = "MONTH", measure.vars = c("Adelaide_AVG", "Br
 join3$MONTH <- c('January', 'February', 'March','April', 'May', 'June', 'July','August', 'September', 'October', 'November', 'December')
 
 barplot(join3$sum,names.arg=join3$MONTH,legend.text = NULL, beside = FALSE,
-        main = 'Sum of Average Raingall per\nMonth for all Ten Cities', sub = NULL, las=2, xlab = '', ylab = 'Sum of Average rainfall (mm)', col = 'blue') 
+        main = 'Sum of Average Raingall per\nMonth for all Ten Cities', sub = NULL, las=2, xlab = '', ylab = 'Sum of Average rainfall (mm)', col = 'blue')
 
 #qplot(join3$value,geom="histogram", binwidth = .5)
