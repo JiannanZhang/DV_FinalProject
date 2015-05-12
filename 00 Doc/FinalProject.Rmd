@@ -1,17 +1,33 @@
 ---
-title: "Final Project: Australia Climate and Rainfall"
+title: "Final Project: Australian Climate and Rainfall"
 author: "Jeffrey and Jackie"
 date: "Wednesday, May 13th, 2015"
 output: html_document
 ---
 
-Our Final Project was created to demonstrate materials and tools learned over the spring semester. This html document has been broken down into different parts to better understand the overall analysis.
+Our Final Project was created to demonstrate materials and tools learned over the spring semester. This html document has been broken down into different sections to better understand the overall analysis of our final project.
 
 All project materials can be downloaded or pulled from our [GitHub](https://github.com/JiannanZhang/DV_FinalProject) repository. 
 
 1. Data Source and Data
 
-The Bureau of Meteorology (BOM) is Australia's national weather, climate, and water agency. They provide infofrmation to all states with in Australia.
+The Bureau of Meteorology (BOM) is Australia's national weather, climate, and water agency. They provide weather information to all states within Australia. All rain data sets were provided through BOM's [Climate Data Online](http://www.bom.gov.au/jsp/ncc/cdio/weatherData/av?p_nccObsCode=136&p_display_type=dailyDataFile&p_startYear=2013&p_c=-872859776&p_stn_num=066062). This source gave us access to select weather stations and download all available rainfall information. In regards to temperature, which was also taken from the BOM website, was directly provided from the [Australian Climate Observations Reference Network – Surface Air Temperature](http://www.bom.gov.au/climate/change/acorn-sat/#tabs=Data-&-network). The temperature dataset provides information on the maximum and minimum temperature for every day of a recorded year for a particular city. 
+
+
+Because there were too many to focus on, we decided to pick the top ten most recognized cities in Australia with locations varying across the country:
+ 
+**City Name**      **Population**
+----------------   --------------------
+Adelaide (SA)      1,212,982
+Brisbane (QLD)  	 2,074,222
+Cairns (QLD)	     153,075
+Canberra (NSW)	   417,860
+Darwin (NT)	       128,073
+Hobart (TAS)	     216,656
+Melbourne (VIC)    4137,432
+Perth (WA)	       1,738,807
+Sydney (NSW)	     4,627,345
+Townsville (QLD)   176,327
 
 ```{r, include = FALSE}
 library(RCurl)
@@ -97,11 +113,13 @@ From the boxplot above, we can see many interesting things. For example, in most
 
 III. Line graph (trend lines) of avg. max temp for those ten cities in recent 30 years.
 
+![](./temp_trend_line_graph.png)
 
+IV. Geograhphical size plot of avg. max temp and avg. min temp for those ten cities in 2014.
 
+![](./temp_geograhpical_size_plot.png)
 
-
-III.
+V.
 Line graph for rainfall average for 10 cities
 ```{r}
 source("../02 Data Wrangling/City_AVGrain_peryear.R", echo = FALSE)
