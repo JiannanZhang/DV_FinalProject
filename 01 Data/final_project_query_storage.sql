@@ -1,6 +1,9 @@
 create table cities_temp_avgs_2014 (
-  rain_date date,
-  rainfall_amount_mm float
+  month varchar2(50),
+  year varchar2(50),
+  day varchar2(50),
+  rainfall_amount_mm float,
+  rain_date date
 );
 commit;
 
