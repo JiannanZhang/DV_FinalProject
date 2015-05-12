@@ -9,12 +9,12 @@ Our Final Project was created to demonstrate materials and tools learned over th
 
 All project materials can be downloaded or pulled from our [GitHub](https://github.com/JiannanZhang/DV_FinalProject) repository. 
 
-1. Data Source and Data
+##__1. Datasource__
 
 The Bureau of Meteorology (BOM) is Australia's national weather, climate, and water agency. They provide weather information to all states within Australia. All rain data sets were provided through BOM's [Climate Data Online](http://www.bom.gov.au/jsp/ncc/cdio/weatherData/av?p_nccObsCode=136&p_display_type=dailyDataFile&p_startYear=2013&p_c=-872859776&p_stn_num=066062). This source gave us access to select weather stations and download all available rainfall information. In regards to temperature, which was also taken from the BOM website, was directly provided from the [Australian Climate Observations Reference Network – Surface Air Temperature](http://www.bom.gov.au/climate/change/acorn-sat/#tabs=Data-&-network). The temperature dataset provides information on the maximum and minimum temperature for every day of a recorded year for a particular city. 
 
 
-Because there were too many to focus on, we decided to pick the top ten most recognized cities in Australia with locations varying across the country:
+Because there were too many cities to focus on, we decided to pick the top ten most recognized cities in Australia with locations varying across the country:
  
 **City Name**      **Population**
 ----------------   --------------------
@@ -29,6 +29,53 @@ Perth (WA)	       1,738,807
 Sydney (NSW)	     4,627,345
 Townsville (QLD)   176,327
 
+
+##__2. Cleaning and Transforming Datasets__
+
+Appropriate datasets were downloaded from the BOM website for temperature and rainfall. We noticed that in order to proceed with our analysis, reformatting the data was a must. With the rainfall data, the removal of illegal characters and changing of the column names for appropriate submission into Orcle was needed. Reformat.R (which was provided in CS 329e) was used to clean this dataset. In addition, the removal of NA was needed. Below represents the SQL query used to replace the NA values with 0.
+
+a. Removing NA from datasets (SQL query)
+
+UPDATE Table Name
+SET Column Name = 0
+WHERE Column Name = 'NA';
+
+b. Reformat.R was used to clean data from any illegal characters in SQL and change the column names to the correct format. Below provides a before and after visual of the reformatted dataset for Sydney.
+
+Before 
+
+![](./Sydneyrainbefore.png)
+
+After
+
+![](./Sydneyrainafter.png)
+
+
+
+We saw that the temperature datasets needed a little more cleaning and joining of data. Jeffrey wrote a python script (called 'txt_to_csv.py' in 01 Data folder) to combine the csv files of minimum and maximum temperature, clean missing values and reformat the date. The following images are examples for city Sydney. In Tableau, we wanted to ensure that the data type date was accessible when using our dataset for analysis, therefore the python script assisted in transforming the strings into data type date. By setting the data type to date for both the rainfall and temperature, it made it easier to blend in Tableau. 
+
+Before 
+
+![](./Sydney_temp_before.png)
+
+After 
+
+![](./Sydney_temp_after.png)
+
+__Connecting to our datasource__
+
+After cleaning and reformatting the data, tables were created in Orcle and datasets were imported. All datasets for this project can be accessed through Orcle Database:
+
+             Orcle Information
+----------  -------------------------------------------
+Server       129.152.144.84
+Port         1521
+Service      ORCL.usuniversi01134.oraclecloud.internal
+Username     C##cs329e_jz7674
+Password     orcl_jz7674
+
+
+
 ```{r, include = FALSE}
 library(RCurl)
 library (ggplot2)
@@ -40,8 +87,6 @@ require(tidyr)
 require(reshape2)
 require(knitr)
 ```
-
-Data
 ```{r}
 source("../01 Data/AdelaideRain.R", echo = TRUE)
 source("../01 Data/BrisbaneRain.R", echo = TRUE)
@@ -58,42 +103,12 @@ source("../01 Data/df_Adelaide_temp.R", echo = TRUE)
 df_Adelaide_temp <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?query="select * from Adelaide_temp "'),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_jz7674', PASS='orcl_jz7674', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE)))
 ```
 
-2. Cleaning and Transforming Data
-
-For Rainfall dataset:
-a. Removing NA from datasets
-SQL in ORCLE: 
-
-UPDATE Table Name
-SET Column Name = '0'
-WHERE Column Name = 'NA';
-
-b. Reformat.R was used to clean data from any illegal characters in SQL and change the column names to the correct format
-Before 
-
-![](./Sydneyrainbefore.png)
-
-After
-
-![](./Sydneyrainafter.png)
-
-For temprature dataset:
-I wrote the python script (called txt_to_csv.py in 01 Data folder) to combine the text files, clean the missing values and finally reformat the data to be well-structured CSV files. The following images are examples for city Sydney
-
-Before 
-
-![](./Sydney_temp_before.png)
-
-After 
-
-![](./Sydney_temp_after.png)
 
 
 
 
 
-
-*. Data Visualization 
+##__3. Data Visualization__
 
 I. Boxplot for a sample city (Adelaide)'s  max temp in recent three years
 
@@ -119,13 +134,14 @@ IV. Geograhphical size plot of avg. max temp and avg. min temp for those ten cit
 
 ![](./temp_geograhpical_size_plot.png)
 
-V.
-Line graph for rainfall average for 10 cities
+V. Line graph showcasing average rainfall over years for each of the ten cities
 ```{r}
 source("../02 Data Wrangling/City_AVGrain_peryear.R", echo = FALSE)
 ```
 ```{r}
-source("../02 Data Wrangling/Join_rain.R", echo = TRUE)
+source("../02 Data Wrangling/Join_rain_year.R", echo = TRUE)
 ```
 
-
+VI. Histogram visualizing the overall sum of the average rainfall for all ten cities
+```{r}
+source("../02 Data Wrangling/Join_rain_month.R", echo = TRUE)
