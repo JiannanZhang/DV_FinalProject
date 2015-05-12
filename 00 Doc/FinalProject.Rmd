@@ -133,6 +133,8 @@ IV. Geograhphical size plot of avg. max temp and avg. min temp for those ten cit
 ![](./temp_geograhpical_size_plot.png)
 
 V. Line graph showcasing average rainfall over years for each of the ten cities
+
+Data wrangling in R was used to produce this visual. For each city, we determined the average rainfall per year by grouping by year and then using the mean function. Because there were ten datasets, inner_join from the dplyr package in R was used to combine datasets based on common "YEARS". 
 ```{r}
 source("../02 Data Wrangling/City_AVGrain_peryear.R", echo = FALSE)
 ```
@@ -140,10 +142,15 @@ source("../02 Data Wrangling/City_AVGrain_peryear.R", echo = FALSE)
 source("../02 Data Wrangling/Join_rain_year.R", echo = TRUE)
 ```
 
+You can see from the analysis, that there are cities with consistent average rainfall over a period of time, whereas cities such as Cairns, Darwin, and Townsville have fluctuating average rainfall. Two interesting things to point out is that for Cairns and Townsville, there is a significantly large drop in average rainfall. Cairns average rainfall drop occurs in 2004 and Townsville sees a drop in 2001. It would be interesting to research more about what climatic change or event may have caused a decrease in rainfall.
+
+
 VI. Histogram visualizing the overall sum of the average rainfall for all ten cities
 ```{r}
 source("../02 Data Wrangling/Join_rain_month.R", echo = TRUE)
 ```
+
+We can see here that January, February, March and December are the months that consist of the most rainfall. In Australia, these dates fall in the summer season. 
 
 VII. Blended Dataset: Rainfall and Temperature Percent Difference Partitioned by Year and Month
 ![](./BlendedADVcalc.png)

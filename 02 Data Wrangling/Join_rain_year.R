@@ -12,5 +12,6 @@ names(join5) <- c("YEAR", "Sydney_Total", "Sydney_AVG", "Townsville_Total", "Tow
 
 full <- inner_join(join1,join4, by ="YEAR") %>% inner_join(join5, by="YEAR")
 
-full %>%  melt(id.vars = "YEAR", measure.vars = c("Adelaide_AVG", "Brisbane_AVG", "Cairns_AVG", "Canberra_AVG", "Darwin_AVG", "Hobart_AVG",  "Melbourne_AVG",  "Perth_AVG",  "Sydney_AVG", "Townsville_AVG")) %>% ggplot(aes(x = YEAR, y = value)) + geom_line(aes(color = variable)) + facet_wrap(~variable)
+head(full)
+full %>%  melt(id.vars = "YEAR", measure.vars = c("Adelaide_AVG", "Brisbane_AVG", "Cairns_AVG", "Canberra_AVG", "Darwin_AVG", "Hobart_AVG",  "Melbourne_AVG",  "Perth_AVG",  "Sydney_AVG", "Townsville_AVG")) %>% ggplot(aes(x = YEAR, y = value)) + geom_line(aes(color = variable)) + facet_wrap(~variable) + labs(x = "Year", y ="Sum of AVG Rainfall (mm)")
 
