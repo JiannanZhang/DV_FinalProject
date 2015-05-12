@@ -145,3 +145,7 @@ source("../02 Data Wrangling/Join_rain_year.R", echo = TRUE)
 VI. Histogram visualizing the overall sum of the average rainfall for all ten cities
 ```{r}
 source("../02 Data Wrangling/Join_rain_month.R", echo = TRUE)
+```
+
+VII. Blended Dataset: Rainfall and Temperature Percent Difference Partitioned by Year and Month
+![](./BlendedADVcalc.png)
