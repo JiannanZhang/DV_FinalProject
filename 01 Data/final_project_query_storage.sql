@@ -1,7 +1,6 @@
 create table cities_temp_avgs_2014 (
-  temp_date date,
-  temp_min float ,
-  temp_max float
+  rain_date date,
+  rainfall_amount_mm float
 );
 commit;
 
