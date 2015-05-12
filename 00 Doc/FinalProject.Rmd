@@ -87,7 +87,7 @@ require(tidyr)
 require(reshape2)
 require(knitr)
 ```
-```{r}
+```{r, include = FALSE}
 source("../01 Data/AdelaideRain.R", echo = TRUE)
 source("../01 Data/BrisbaneRain.R", echo = TRUE)
 source("../01 Data/CairnsRain.R", echo = TRUE)
@@ -98,9 +98,7 @@ source("../01 Data/MelbourneRain.R", echo = TRUE)
 source("../01 Data/PerthRain.R", echo = TRUE)
 source("../01 Data/SydneyRain.R", echo = TRUE)
 source("../01 Data/TownsvilleRain.R", echo = TRUE)
-
 source("../01 Data/df_Adelaide_temp.R", echo = TRUE)
-df_Adelaide_temp <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?query="select * from Adelaide_temp "'),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_jz7674', PASS='orcl_jz7674', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE)))
 ```
 
 
@@ -112,8 +110,8 @@ df_Adelaide_temp <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/re
 
 I. Boxplot for a sample city (Adelaide)'s  max temp in recent three years
 
-```{r,echo=TRUE}
-source("../03 Visualizations/box_plot_for_Adelaide.R", echo = FALSE)
+```{r}
+source("../03 Visualizations/box_plot_for_Adelaide.R", echo = TRUE)
 ```
 
 From the boxplot above, we can see that the median of max temp in 2012 and 2013 is pretty stable. However, in 2014, the median max temp obviously increased a fair amount. Moreover, there are many outliers (about ten) in 2014 whereas in 2012 and 2013, there are none and one outlier respectively.These outliers should draw our attention in the future study.
@@ -121,7 +119,7 @@ From the boxplot above, we can see that the median of max temp in 2012 and 2013 
 II. BoxPlot for those ten cities' max temp in 2014
 
 ```{r}
-source("../03 Visualizations/ten_cities_temp_boxplot.R", echo = FALSE)
+source("../03 Visualizations/ten_cities_temp_boxplot.R", echo = TRUE)
 ```
 
 From the boxplot above, we can see many interesting things. For example, in most cities(except Darwin, Brisbane, Canberra and Perth), all ouliers in each city are gathered on one side. Notice that there are no outliers in Brisbane, Canberra and Perth, which means their temperatures are more "concentrated" than those in other cities. Also notice that Darwin is a hot city over the year (median is about 33) and the max temp range is very small. 
