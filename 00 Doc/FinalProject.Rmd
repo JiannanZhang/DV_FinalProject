@@ -159,3 +159,7 @@ We can see here that January, February, March and December are the months that c
 
 VII. Blended Dataset: Rainfall and Temperature Percent Difference Partitioned by Year and Month
 ![](./BlendedADVcalc.png)
+
+
+Lastly, we blended the rainfall and temperature data on Tableau partitioning by Year and Month. As you look at the visual, 2005 is used as the based year and every month is then the basis for the following year's month. Rainfall fluctuates a lot more heavily than temperature. 
+
