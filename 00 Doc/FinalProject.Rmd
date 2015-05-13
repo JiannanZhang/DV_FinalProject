@@ -128,9 +128,14 @@ III. Line graph (trend lines) of avg. max temp for those ten cities in recent 30
 
 ![](./temp_trend_line_graph.png)
 
+From the graph above, we can see that over the recent 30 years, Darwin has the highest avg. max temp and Hobart has the lowest avg. max temp. Notice that some trend lines tell us some noticeable facts. For example in Hobart in 1988 and 1993, there are two high peaks. After 1993, the avg. max temperatures are pretty stable. Although in the graph the difference is not big respect to the unit, it is still significant because they are all averages. These noticeable peaks can be studied for the future research.
+
+
 IV. Geograhphical size plot of avg. max temp and avg. min temp for those ten cities in 2014.
 
 ![](./temp_geograhpical_size_plot.png)
+
+From the graph above, we can see some interesting facts. For example, although Canberra has much higher latitude than Hobart (remember that Australia is in the southern hemisphere), it was actually much colder than Hobart on avg. in 2014. Such noticeable observation can be studied for the future research.
 
 V. Line graph showcasing average rainfall over years for each of the ten cities
 
