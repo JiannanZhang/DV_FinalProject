@@ -30,6 +30,10 @@ Sydney (NSW)	     4,627,345
 Townsville (QLD)   176,327
 
 
+
+Our complete project can be found on [GitHub](https://github.com/JiannanZhang/DV_FinalProject).
+
+
 ##__2. Cleaning and Transforming Datasets__
 
 Appropriate datasets were downloaded from the BOM website for temperature and rainfall. We noticed that in order to proceed with our analysis, reformatting the data was a must. With the rainfall data, the removal of illegal characters and changing of the column names for appropriate submission into Orcle was needed. Reformat.R (which was provided in CS 329e) was used to clean this dataset. In addition, the removal of NA was needed. Below represents the SQL query used to replace the NA values with 0.
@@ -161,5 +165,26 @@ VII. Blended Dataset: Rainfall and Temperature Percent Difference Partitioned by
 ![](./BlendedADVcalc.png)
 
 
-Lastly, we blended the rainfall and temperature data on Tableau partitioning by Year and Month. As you look at the visual, 2005 is used as the based year and every month is then the basis for the following year's month. Rainfall fluctuates a lot more heavily than temperature. 
+Lastly, we blended the rainfall and temperature data on Tableau partitioning by Year and Month. As you look at the visual above, 2005 is used as the based year and every month is then the basis for the following year's month. Rainfall fluctuates a lot more heavily than temperature. The images of the tableau workbook helps readers understand how we went about creating the visual. 
 
+
+##__4. For the future__
+
+In conclusion, we were able to take in large datasets, manipulate the data, and create visual representations. For the future, we would like to build a statistical model to predict temperature and rainfall. In addition conduct research to provide more information on temperature and rainfall in Australia. 
+
+
+-----
+
+__Tableau Workbook__
+
+Below are the final Tableau visuals generated.
+
+![](./cities_temp_maxavgs_trend.png)
+
+
+
+![](./GeoTemp.png)
+
+
+
+![](./BlendPercentDifference.png)
